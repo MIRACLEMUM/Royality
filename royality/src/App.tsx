@@ -3,9 +3,11 @@ import Hero from "./components/Hero";
 import Services from "./components/Services";
 import About from "./components/About";
 import Team from "./components/Team";
-import Contact from "./components/Contact";
+
 import FAQ from "./components/FAQ";
-import Announcements from "./components/Announcements";
+import Contact from "./components/Contact";
+
+
 import Footer from "./components/Footer";
 
 const App = () => {
@@ -16,9 +18,9 @@ const App = () => {
       <Services />
       <About />
       <Team />
-      <Contact />
+      
       <FAQ />
-      <Announcements />
+    <Contact />
       <Footer />
     </div>
   );

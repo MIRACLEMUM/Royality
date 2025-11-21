@@ -15,9 +15,12 @@ const About: FC = () => {
       className="
         w-full 
         bg-gradient-to-b 
-        from-black via-[#120700] to-black
+        from-white/5 dark:from-black 
+        via-white/10 dark:via-[#120700] 
+        to-white/5 dark:to-black
         py-20 px-6
         flex justify-center
+        transition-colors
       "
       ref={ref}
     >
@@ -34,13 +37,13 @@ const About: FC = () => {
             About Royalty Ecosystem
           </h2>
 
-          <p className="mt-6 text-gray-300 leading-relaxed text-lg">
+          <p className="mt-6 text-gray-700 dark:text-gray-300 leading-relaxed text-lg transition-colors">
             Royalty Ecosystem is a Web3-powered hub built to empower creators, 
             founders, and businesses by providing premium tools, community 
             management systems, branding solutions, and growth strategies.
           </p>
 
-          <p className="mt-4 text-gray-300 leading-relaxed text-lg">
+          <p className="mt-4 text-gray-700 dark:text-gray-300 leading-relaxed text-lg transition-colors">
             We combine innovation, design, and blockchain-driven systems to help 
             teams scale faster, build trust, and grow their digital presence.
           </p>
@@ -52,25 +55,31 @@ const About: FC = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="mt-8 grid grid-cols-3 gap-6 text-center"
           >
-            <div className="bg-[#1a1a1a]/60 p-4 rounded-xl border border-orange-500/30">
+            <div className="bg-white/10 dark:bg-[#1a1a1a]/60 p-4 rounded-xl border border-orange-500/30 transition-colors">
               <h3 className="text-2xl font-bold text-orange-400">
                 {inView && <CountUp end={3} />}+
               </h3>
-              <p className="text-gray-400 text-sm">Years Experience</p>
+              <p className="text-gray-700 dark:text-gray-300 text-sm transition-colors">
+                Years Experience
+              </p>
             </div>
 
-            <div className="bg-[#1a1a1a]/60 p-4 rounded-xl border border-orange-500/30">
+            <div className="bg-white/10 dark:bg-[#1a1a1a]/60 p-4 rounded-xl border border-orange-500/30 transition-colors">
               <h3 className="text-2xl font-bold text-orange-400">
                 {inView && <CountUp end={50} />}+
               </h3>
-              <p className="text-gray-400 text-sm">Projects Delivered</p>
+              <p className="text-gray-700 dark:text-gray-300 text-sm transition-colors">
+                Projects Delivered
+              </p>
             </div>
 
-            <div className="bg-[#1a1a1a]/60 p-4 rounded-xl border border-orange-500/30">
+            <div className="bg-white/10 dark:bg-[#1a1a1a]/60 p-4 rounded-xl border border-orange-500/30 transition-colors">
               <h3 className="text-2xl font-bold text-orange-400">
                 {inView && <CountUp end={10000} />}+
               </h3>
-              <p className="text-gray-400 text-sm">Community Members</p>
+              <p className="text-gray-700 dark:text-gray-300 text-sm transition-colors">
+                Community Members
+              </p>
             </div>
           </motion.div>
         </motion.div>

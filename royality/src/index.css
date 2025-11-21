@@ -2,4 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Pulsing background logo */
+@keyframes pulseSlow {
+  0%, 100% { transform: scale(1); opacity: 0.1; }
+  50% { transform: scale(1.05); opacity: 0.15; }
+}
+.animate-pulse-slow {
+  animation: pulseSlow 6s infinite;
+}
+
+/* Gradient animation for heading */
+@keyframes gradientX {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradientX 8s ease infinite;
+}
+
 
