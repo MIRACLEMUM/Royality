@@ -27,7 +27,6 @@ export default function Header() {
         <nav className="hidden md:flex items-center space-x-8 text-black/90 dark:text-white/90 text-sm font-medium">
           <a href="#about" className="hover:text-orange-500 dark:hover:text-yellow-400 transition">About</a>
           <a href="#team" className="hover:text-orange-500 dark:hover:text-yellow-400 transition">Team</a>
-          <a href="#announcement" className="hover:text-orange-500 dark:hover:text-yellow-400 transition">Announcement</a>
           <a href="#faq" className="hover:text-orange-500 dark:hover:text-yellow-400 transition">FAQ</a>
           <a href="#contact" className="hover:text-orange-500 dark:hover:text-yellow-400 transition">Contact</a>
         </nav>
