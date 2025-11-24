@@ -100,7 +100,7 @@ const About: FC = () => {
             "
           />
           <img
-            src="/kingab.jpg"
+            src="/kingAB1.jpg"
             alt="Royalty Web3 Services"
             className="
               relative z-10 

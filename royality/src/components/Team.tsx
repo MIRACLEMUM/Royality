@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Twitter } from "lucide-react";
 import { FaTelegramPlane } from "react-icons/fa";
 
@@ -11,33 +11,50 @@ interface TeamMember {
   telegram?: string;
 }
 
-// Example 15 members
 const teamMembers: TeamMember[] = [
-  { name: "Alice", role: "Designer", image: "/public/kingab.jpg", twitter: "#", telegram: "#" },
-  { name: "Bob", role: "Developer", image: "/team/bob.jpg", twitter: "#", telegram: "#" },
-  { name: "Charlie", role: "Community", image: "/team/charlie.jpg", twitter: "#", telegram: "#" },
-  { name: "David", role: "Marketing", image: "/team/david.jpg", twitter: "#", telegram: "#" },
-  { name: "Eva", role: "Manager", image: "/team/eva.jpg", twitter: "#", telegram: "#" },
-  { name: "Frank", role: "Engineer", image: "/team/frank.jpg", twitter: "#", telegram: "#" },
-  { name: "Grace", role: "Support", image: "/team/grace.jpg", twitter: "#", telegram: "#" },
-  { name: "Hannah", role: "Developer", image: "/team/hannah.jpg", twitter: "#", telegram: "#" },
-  { name: "Ian", role: "Designer", image: "/team/ian.jpg", twitter: "#", telegram: "#" },
-  { name: "Jack", role: "Community", image: "/team/jack.jpg", twitter: "#", telegram: "#" },
-  { name: "Kate", role: "Marketing", image: "/team/kate.jpg", twitter: "#", telegram: "#" },
-  { name: "Leo", role: "Manager", image: "/team/leo.jpg", twitter: "#", telegram: "#" },
-  { name: "Mia", role: "Engineer", image: "/team/mia.jpg", twitter: "#", telegram: "#" },
-  { name: "Nina", role: "Support", image: "/team/nina.jpg", twitter: "#", telegram: "#" },
-  { name: "Oscar", role: "Developer", image: "/team/oscar.jpg", twitter: "#", telegram: "#" },
+  { name: "King AB", role: "Founder/Marketer", image: "/kingAB1.jpg", twitter: "https://t.me/King_MetaX", telegram: "#" },
+  { name: "Primo", role: "Manager/ Backend developer", image: "/Primo.jpg", twitter: "https://x.com/primo_Mind", telegram: "https://t.me/Primoeth" },
+  { name: "Queen Rose", role: "Social media manager", image: "/Rose.jpg", twitter: "https://x.com/Roseonchain", telegram: "#" },
+  { name: "Emmy", role: "Chief Shiller/Chief Raider", image: "/Emmy.jpg", twitter: "https://x.com/Emmy_1001", telegram: "https://t.me/Emmy0024" },
+  { name: "Miracle Sunday", role: "Frontend Developer/Web3 Educator", image: "/Miracle.jpg", twitter: "https://x.com/TechGoddess0", telegram: "https://t.me/miracle44444" },
+  { name: "Spydex", role: "Director", image: "/spid.jpg", twitter: "https://x.com/spydex_spy", telegram: "#" },
+  { name: "Nnenna", role: "UI- UX Designer", image: "/Nne.jpg", twitter: "https://x.com/Nnennayaa_", telegram: "https://t.me/Nnennaya_E" },
+  { name: "SMX", role: "Chief trader", image: "/smx.jpg", twitter: "https://x.com/Sleem_mx", telegram: "#" },
+  { name: "Wajudjim", role: "Moderator", image: "/wajudjim.jpg", twitter: "https://x.com/wajudjim", telegram: "#" },
+  { name: "Mee", role: "Chief Designer", image: "/mee.jpg", twitter: "https://x.com/Jesu_tofunmee", telegram: "#" },
+  { name: "Goodness", role: " Blockchain Dev/ Intern ", image: "/goodness.jpg", twitter: "https://x.com/younggee704?s=20", telegram: "#" },
+  { name: "Don", role: "Chief designer", image: "/Don.jpg", twitter: "https://x.com/_Don001", telegram: "#" },
+  { name: "Carcal", role: "Manager", image: "/Carcal.jpg", twitter: "https://x.com/carcalofweb3", telegram: "#" },
+  { name: "Razzy", role: "Director", image: "/razzy.jpg", twitter: "https://x.com/Razzyox", telegram: "#" },
+  { name: "Alhagee", role: "Visual strategies", image: "/alhagee.jpg", twitter: "https://x.com/alhagee45", telegram: "#" },
 ];
 
 const Team: FC = () => {
   const [showAll, setShowAll] = useState(false);
+  const [windowWidth, setWindowWidth] = useState<number>(0);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+
+    handleResize(); // 🚀 FIX: run once without direct setState in effect body
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  let membersToShow = teamMembers;
+  if (!showAll) {
+    if (windowWidth < 640) {
+      membersToShow = teamMembers.slice(0, 3); // Mobile
+    } else if (windowWidth >= 640 && windowWidth < 1024) {
+      membersToShow = teamMembers.slice(0, 6); // Tablet
+    }
+  }
+
+  const showButton = windowWidth < 1024;
 
   return (
-    <section
-      id="team"
-      className="w-full py-24 px-6 bg-white dark:bg-[#1a0c10] transition-colors"
-    >
+    <section id="team" className="w-full py-24 px-6 bg-white dark:bg-[#1a0c10] transition-colors">
       <div className="max-w-6xl mx-auto text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold text-orange-400">Our Team</h2>
         <p className="mt-4 text-gray-700 dark:text-gray-300">
@@ -45,13 +62,9 @@ const Team: FC = () => {
         </p>
       </div>
 
-      {/* TEAM GRID */}
-      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
-        {(showAll || window.innerWidth >= 768 ? teamMembers : teamMembers.slice(0, 3)).map((member, idx) => (
-          <div
-            key={idx}
-            className="relative group flex flex-col items-center text-center"
-          >
+      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+        {membersToShow.map((member, idx) => (
+          <div key={idx} className="relative group flex flex-col items-center text-center">
             <img
               src={member.image}
               alt={member.name}
@@ -61,7 +74,6 @@ const Team: FC = () => {
             <h3 className="mt-2 text-lg font-semibold text-black dark:text-white">{member.name}</h3>
             <p className="text-gray-600 dark:text-gray-300 text-sm">{member.role}</p>
 
-            {/* SOCIAL ICONS ON HOVER */}
             <div className="mt-2 flex space-x-3 opacity-0 group-hover:opacity-100 transition-opacity">
               {member.twitter && (
                 <a href={member.twitter} target="_blank" rel="noreferrer">
@@ -78,15 +90,16 @@ const Team: FC = () => {
         ))}
       </div>
 
-      {/* Show More / Show Less - Mobile Only */}
-      <div className="mt-6 flex justify-center md:hidden">
-        <button
-          className="px-6 py-2 rounded-full bg-orange-500 text-white dark:bg-orange-500 dark:text-white font-semibold hover:bg-orange-600 dark:hover:bg-orange-400 transition"
-          onClick={() => setShowAll(!showAll)}
-        >
-          {showAll ? "Show Less" : "Show More"}
-        </button>
-      </div>
+      {showButton && (
+        <div className="mt-6 flex justify-center">
+          <button
+            className="px-6 py-2 rounded-full bg-orange-500 text-white dark:bg-orange-500 dark:text-white font-semibold hover:bg-orange-600 dark:hover:bg-orange-400 transition"
+            onClick={() => setShowAll(!showAll)}
+          >
+            {showAll ? "Show Less" : "Show More"}
+          </button>
+        </div>
+      )}
     </section>
   );
 };

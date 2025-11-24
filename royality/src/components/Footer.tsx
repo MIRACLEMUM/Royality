@@ -26,7 +26,7 @@ const Footer: FC = () => {
       </div>
 
       {/* Bottom */}
-      <div className="mt-8 text-center text-gray-500 dark:text-gray-600 text-sm">
+      <div className="mt-8 text-center text-gray-500 dark:text-gray-400 text-sm">
         &copy; {new Date().getFullYear()} Royalty Ecosystem. All rights reserved.
       </div>
     </footer>

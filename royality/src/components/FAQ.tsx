@@ -21,6 +21,7 @@ const faqData: FaqItem[] = [
 
 const Faq: FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [showAllMobile, setShowAllMobile] = useState(false);
 
   const toggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -36,30 +37,61 @@ const Faq: FC = () => {
       </div>
 
       <div className="max-w-3xl mx-auto flex flex-col gap-4">
-        {faqData.map((item, index) => (
-          <div key={index} className="border-b border-gray-200 dark:border-gray-700">
-            <button
-              onClick={() => toggle(index)}
-              className="w-full flex justify-between items-center py-4 text-left font-medium text-gray-800 dark:text-gray-200 hover:text-orange-500 dark:hover:text-yellow-400 transition"
+        {faqData.map((item, index) => {
+          const shouldHideOnMobile = index >= 4 && !showAllMobile;
+
+          return (
+            <div
+              key={index}
+              className={`border-b border-gray-200 dark:border-gray-700 
+              md:block ${shouldHideOnMobile ? "hidden md:block" : ""}`}
             >
-              {item.question}
-              <span className={`transform transition-transform ${openIndex === index ? "rotate-180" : ""}`}>▼</span>
+              <button
+                onClick={() => toggle(index)}
+                className="w-full flex justify-between items-center py-4 text-left font-medium text-gray-800 dark:text-gray-200 hover:text-orange-500 dark:hover:text-yellow-400 transition"
+              >
+                {item.question}
+                <span className={`transform transition-transform ${openIndex === index ? "rotate-180" : ""}`}>▼</span>
+              </button>
+
+              <AnimatePresence>
+                {openIndex === index && (
+                  <motion.p
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="mt-2 text-gray-700 dark:text-gray-300 font-bold overflow-hidden"
+                  >
+                    {item.answer}
+                  </motion.p>
+                )}
+              </AnimatePresence>
+            </div>
+          );
+        })}
+
+        {/* MOBILE BUTTONS */}
+        <div className="md:hidden text-center mt-6">
+          {!showAllMobile ? (
+            <button
+              onClick={() => setShowAllMobile(true)}
+              className="px-6 py-2 bg-orange-500 text-white rounded-full text-sm font-medium shadow hover:bg-orange-600 transition"
+            >
+              Show More
             </button>
-            <AnimatePresence>
-              {openIndex === index && (
-                <motion.p
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="mt-2 text-gray-700 dark:text-gray-300 font-bold overflow-hidden"
-                >
-                  {item.answer}
-                </motion.p>
-              )}
-            </AnimatePresence>
-          </div>
-        ))}
+          ) : (
+            <button
+              onClick={() => {
+                setShowAllMobile(false);
+                setOpenIndex(null); // close any open FAQ when collapsing
+              }}
+              className="px-6 py-2 bg-orange-500 text-white rounded-full text-sm font-medium shadow hover:bg-orange-600 transition"
+            >
+              Show Less
+            </button>
+          )}
+        </div>
       </div>
     </section>
   );
