@@ -16,7 +16,7 @@ const teamMembers: TeamMember[] = [
   { name: "Primo", role: "Manager", image: "/Primo.jpg", twitter: "https://x.com/primo_Mind", telegram: "https://t.me/Primoeth" },
   { name: "Queen Rose", role: "SMM", image: "/Rose.jpg", twitter: "https://x.com/Roseonchain", telegram: "#" },
   { name: "Emmy", role: "Manager", image: "/Emmy.jpg", twitter: "https://x.com/Emmy_1001", telegram: "https://t.me/Emmy0024" },
-  { name: "Miracle Sunday", role: "Developer", image: "/miracles.jpg", twitter: "https://x.com/TechGoddess0", telegram: "https://t.me/miracle44444" },
+  { name: "Miracle Sunday", role: "Frontend Developer", image: "/miracles.jpg", twitter: "https://x.com/TechGoddess0", telegram: "https://t.me/miracle44444" },
   { name: "Spydex", role: "Director", image: "/spid.jpg", twitter: "https://x.com/spydex_spy", telegram: "#" },
   { name: "Nnenna", role: "UI/UX Designer", image: "/Nne.jpg", twitter: "https://x.com/Nnennayaa_", telegram: "https://t.me/Nnennaya_E" },
   { name: "SMX", role: " Trader", image: "/smx.jpg", twitter: "https://x.com/Sleem_mx", telegram: "#" },
