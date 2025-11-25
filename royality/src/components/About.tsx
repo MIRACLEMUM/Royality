@@ -77,9 +77,9 @@ const About: FC = () => {
               <h3 className="text-2xl font-bold text-orange-400">
                 {inView && <CountUp end={1000} />}+
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 text-sm transition-colors">
-                Community Members
-              </p>
+              <p className="text-gray-700 dark:text-gray-300 text-sm transition-colors text-center">
+    Community Members
+  </p>
             </div>
           </motion.div>
         </motion.div>

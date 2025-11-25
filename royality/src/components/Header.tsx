@@ -87,7 +87,6 @@ export default function Header() {
         <div className="px-6 pt-4 pb-6 flex flex-col gap-3">
           <a href="#about" onClick={() => setOpen(false)} className="block text-black/90 dark:text-white/90 py-2 hover:text-orange-500 dark:hover:text-yellow-400 transition">About</a>
           <a href="#team" onClick={() => setOpen(false)} className="block text-black/90 dark:text-white/90 py-2 hover:text-orange-500 dark:hover:text-yellow-400 transition">Team</a>
-          <a href="#announcement" onClick={() => setOpen(false)} className="block text-black/90 dark:text-white/90 py-2 hover:text-orange-500 dark:hover:text-yellow-400 transition">Announcement</a>
           <a href="#faq" onClick={() => setOpen(false)} className="block text-black/90 dark:text-white/90 py-2 hover:text-orange-500 dark:hover:text-yellow-400 transition">FAQ</a>
           <a href="#contact" onClick={() => setOpen(false)} className="block text-black/90 dark:text-white/90 py-2 hover:text-orange-500 dark:hover:text-yellow-400 transition">Contact</a>
 
