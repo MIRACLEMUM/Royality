@@ -12,18 +12,18 @@ interface TeamMember {
 }
 
 const teamMembers: TeamMember[] = [
-  { name: "King AB", role: "Founder/Marketer", image: "/kingAB1.jpg", twitter: "https://t.me/King_MetaX", telegram: "#" },
-  { name: "Primo", role: "Manager/ Backend developer", image: "/Primo.jpg", twitter: "https://x.com/primo_Mind", telegram: "https://t.me/Primoeth" },
-  { name: "Queen Rose", role: "Social media manager", image: "/Rose.jpg", twitter: "https://x.com/Roseonchain", telegram: "#" },
-  { name: "Emmy", role: "Chief Shiller/Chief Raider", image: "/Emmy.jpg", twitter: "https://x.com/Emmy_1001", telegram: "https://t.me/Emmy0024" },
-  { name: "Miracle Sunday", role: "Frontend Developer/Web3 Educator", image: "/Miracle.jpg", twitter: "https://x.com/TechGoddess0", telegram: "https://t.me/miracle44444" },
+  { name: "King AB", role: "Founder/CEO", image: "/kingAB1.jpg", twitter: "https://t.me/King_MetaX", telegram: "#" },
+  { name: "Primo", role: "Manager", image: "/Primo.jpg", twitter: "https://x.com/primo_Mind", telegram: "https://t.me/Primoeth" },
+  { name: "Queen Rose", role: "SMM", image: "/Rose.jpg", twitter: "https://x.com/Roseonchain", telegram: "#" },
+  { name: "Emmy", role: "Manager", image: "/Emmy.jpg", twitter: "https://x.com/Emmy_1001", telegram: "https://t.me/Emmy0024" },
+  { name: "Miracle Sunday", role: "Developer", image: "/Miracle.jpg", twitter: "https://x.com/TechGoddess0", telegram: "https://t.me/miracle44444" },
   { name: "Spydex", role: "Director", image: "/spid.jpg", twitter: "https://x.com/spydex_spy", telegram: "#" },
-  { name: "Nnenna", role: "UI- UX Designer", image: "/Nne.jpg", twitter: "https://x.com/Nnennayaa_", telegram: "https://t.me/Nnennaya_E" },
-  { name: "SMX", role: "Chief trader", image: "/smx.jpg", twitter: "https://x.com/Sleem_mx", telegram: "#" },
+  { name: "Nnenna", role: "UI/UX Designer", image: "/Nne.jpg", twitter: "https://x.com/Nnennayaa_", telegram: "https://t.me/Nnennaya_E" },
+  { name: "SMX", role: " Trader", image: "/smx.jpg", twitter: "https://x.com/Sleem_mx", telegram: "#" },
   { name: "Wajudjim", role: "Moderator", image: "/wajudjim.jpg", twitter: "https://x.com/wajudjim", telegram: "#" },
-  { name: "Mee", role: "Chief Designer", image: "/mee.jpg", twitter: "https://x.com/Jesu_tofunmee", telegram: "#" },
-  { name: "Goodness", role: " Blockchain Dev/ Intern ", image: "/goodness.jpg", twitter: "https://x.com/younggee704?s=20", telegram: "#" },
-  { name: "Don", role: "Chief designer", image: "/Don.jpg", twitter: "https://x.com/_Don001", telegram: "#" },
+  { name: "Mee", role: "Designer", image: "/mee.jpg", twitter: "https://x.com/Jesu_tofunmee", telegram: "#" },
+  { name: "Goodness", role: " Manager ", image: "/goodness.jpg", twitter: "https://x.com/younggee704?s=20", telegram: "#" },
+  { name: "Don", role: "Designer", image: "/Don.jpg", twitter: "https://x.com/_Don001", telegram: "#" },
   { name: "Carcal", role: "Manager", image: "/Carcal.jpg", twitter: "https://x.com/carcalofweb3", telegram: "#" },
   { name: "Razzy", role: "Director", image: "/razzy.jpg", twitter: "https://x.com/Razzyox", telegram: "#" },
   { name: "Alhagee", role: "Visual strategies", image: "/alhagee.jpg", twitter: "https://x.com/alhagee45", telegram: "#" },
@@ -58,7 +58,7 @@ const Team: FC = () => {
       <div className="max-w-6xl mx-auto text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold text-orange-400">Our Team</h2>
         <p className="mt-4 text-gray-700 dark:text-gray-300">
-          Meet the talented creators powering the Royalty Ecosystem
+          Meet the talented builders powering the Royalty Ecosystem
         </p>
       </div>
 

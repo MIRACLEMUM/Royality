@@ -2,7 +2,6 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import { useTheme } from "../context/ThemeContext";
 
-
 export default function Header() {
   const [open, setOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
@@ -31,7 +30,7 @@ export default function Header() {
           <a href="#contact" className="hover:text-orange-500 dark:hover:text-yellow-400 transition">Contact</a>
         </nav>
 
-        {/* Desktop CTA + Toggle */}
+        {/* Desktop CTA + Sun/Moon Toggle */}
         <div className="hidden md:flex items-center gap-4">
           <a
             href="#about"
@@ -40,28 +39,21 @@ export default function Header() {
             Learn More
           </a>
 
-          {/* 💡 iOS Toggle Switch */}
+          {/* 🌙 / ☀️ Desktop Toggle */}
           <button
             onClick={toggleTheme}
             aria-label="Toggle theme"
-            className="
-              w-12 h-6 rounded-full flex items-center 
-              transition-all duration-300
-              p-1 relative
-              bg-gray-300 dark:bg-gray-600
-            "
+            className="text-2xl p-2 rounded-full transition hover:bg-black/5 dark:hover:bg-white/10"
           >
-            <span
-              className={`
-                h-5 w-5 rounded-full bg-white shadow 
-                transform transition-all duration-300
-                ${theme === "dark" ? "translate-x-6" : "translate-x-0"}
-              `}
-            />
+            {theme === "dark" ? (
+              <span className="text-yellow-400">☀️</span>
+            ) : (
+              <span className="text-gray-700">🌙</span>
+            )}
           </button>
         </div>
 
-        {/* Mobile menu button + toggle */}
+        {/* Mobile hamburger + sun/moon toggle */}
         <div className="md:hidden flex items-center gap-3">
           <button
             onClick={() => setOpen((prev) => !prev)}
@@ -71,23 +63,17 @@ export default function Header() {
             {open ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
           </button>
 
-          {/* Mobile iOS toggle */}
+          {/* 🌙 / ☀️ Mobile Toggle */}
           <button
             onClick={toggleTheme}
             aria-label="Toggle theme"
-            className="
-              w-11 h-6 rounded-full flex items-center 
-              transition-all duration-300 p-1
-              bg-gray-300 dark:bg-gray-600
-            "
+            className="text-2xl p-2 rounded-full transition hover:bg-black/5 dark:hover:bg-white/10"
           >
-            <span
-              className={`
-                h-5 w-5 rounded-full bg-white shadow 
-                transform transition-all duration-300
-                ${theme === "dark" ? "translate-x-5" : "translate-x-0"}
-              `}
-            />
+            {theme === "dark" ? (
+              <span className="text-yellow-400">☀️</span>
+            ) : (
+              <span className="text-gray-700">🌙</span>
+            )}
           </button>
         </div>
       </div>
