@@ -27,20 +27,25 @@ const Services: FC = () => {
   return (
     <section
       id="services"
-      className="w-full py-24 px-6 bg-white dark:bg-black relative transition-colors"
+      className="
+        w-full py-24 px-6
+        bg-white dark:bg-[#0a0a0a]
+        transition-colors
+      "
     >
       {/* TITLE */}
       <div className="text-center mb-14">
         <h2 className="text-4xl md:text-5xl font-bold text-orange-400 drop-shadow-lg">
           Our Services
         </h2>
-        <p className="text-gray-700 dark:text-gray-300 mt-4 text-lg max-w-2xl mx-auto transition-colors">
+
+        <p className="text-gray-700 dark:text-gray-300 mt-4 text-lg max-w-2xl mx-auto">
           We provide powerful, modern Web3-based solutions that help creators,
           agencies, and brands grow with confidence.
         </p>
       </div>
 
-      {/* SERVICES GRID */}
+      {/* GRID */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
         {servicesData.map((service, idx) => (
           <motion.div
@@ -48,9 +53,12 @@ const Services: FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.2, duration: 0.6 }}
-            whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(255,140,0,0.3)" }}
+            whileHover={{
+              scale: 1.05,
+              boxShadow: "0 20px 40px rgba(255,140,0,0.3)",
+            }}
             className="
-              bg-white/10 dark:bg-[#1a1a1a]/60
+              bg-white dark:bg-[#1b1b1b]
               backdrop-blur-xl
               border border-orange-500/20
               rounded-2xl p-8 
@@ -60,10 +68,12 @@ const Services: FC = () => {
             "
           >
             {service.icon}
-            <h3 className="text-2xl font-semibold text-black dark:text-white transition-colors">
+
+            <h3 className="text-2xl font-semibold text-black dark:text-white">
               {service.title}
             </h3>
-            <p className="text-gray-700 dark:text-gray-300 mt-4 leading-relaxed transition-colors">
+
+            <p className="text-gray-700 dark:text-gray-300 mt-4 leading-relaxed">
               {service.description}
             </p>
           </motion.div>

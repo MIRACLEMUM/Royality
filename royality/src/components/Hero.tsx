@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { FC } from "react";
 import JoinPopup from "./JoinPopup";
-import Modal from "./Modal"; // ✅ Import the new Modal
+import Modal from "./Modal"; 
 
 const Hero: FC = () => {
   const [showJoin, setShowJoin] = useState(false);
@@ -60,7 +60,7 @@ const Hero: FC = () => {
       {/* POPUPS */}
       <JoinPopup open={showJoin} onClose={() => setShowJoin(false)} />
       <Modal open={showAnnouncement} onClose={() => setShowAnnouncement(false)} title="Announcement">
-  Royalty Ecosystem Academy — Coming Soon! 🔥  
+  Royalty Ecosystem Academy , Coming Soon! 🔥  
   Get ready to learn Web3, design, crypto skills, and earn while you grow.
 </Modal>
 

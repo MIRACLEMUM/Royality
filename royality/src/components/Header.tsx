@@ -7,7 +7,7 @@ export default function Header() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-white/80 dark:bg-[#0b0c10]/80 backdrop-blur-lg border-b border-black/10 dark:border-white/10 transition-colors">
+    <header className="fixed inset-x-0 top-0 z-50 bg-transparent backdrop-blur-lg border-b border-black/10 dark:border-white/10 transition-colors">
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
 
         {/* Logo */}
