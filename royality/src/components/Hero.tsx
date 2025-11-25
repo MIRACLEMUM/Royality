@@ -8,7 +8,10 @@ const Hero: FC = () => {
   const [showAnnouncement, setShowAnnouncement] = useState(false); // new state
 
   return (
-    <section className="relative w-full min-h-screen bg-white dark:bg-[#1a0f00] flex flex-col items-center justify-start overflow-hidden pt-32 transition-colors" style={{ scrollMarginTop: "8rem" }}>
+    <section
+      className="relative w-full min-h-screen bg-white/90 dark:bg-[#1a0f00]/90 flex flex-col items-center justify-start overflow-hidden pt-32 transition-colors"
+      style={{ scrollMarginTop: "8rem" }}
+    >
       
       {/* HERO CONTENT */}
       <div className="relative z-10 max-w-3xl mt-6 text-center px-4">
@@ -18,7 +21,7 @@ const Hero: FC = () => {
           🚀 Join the Royalty Web3 Community!
         </div>
 
-        {/* HERO HEADING — removed Typewriter */}
+        {/* HERO HEADING */}
         <h1 className="text-4xl md:text-5xl font-extrabold text-orange-500 dark:text-orange-300 leading-snug drop-shadow-lg animate-fadeSlideUp">
           Royalty Ecosystem Your Gateway to Seamless Web3 Services
         </h1>
@@ -48,13 +51,19 @@ const Hero: FC = () => {
       </div>
 
       {/* FADED BACKGROUND LOGO */}
-      <img src="/assets/logo.png" className="absolute bottom-0 w-[500px] opacity-10 select-none pointer-events-none" alt="Background Logo" />
+      <img
+        src="/assets/logo.png"
+        className="absolute bottom-0 w-[500px] opacity-30 select-none pointer-events-none"
+        alt="Background Logo"
+      />
 
       {/* POPUPS */}
       <JoinPopup open={showJoin} onClose={() => setShowJoin(false)} />
       <Modal open={showAnnouncement} onClose={() => setShowAnnouncement(false)} title="Announcement">
-        Coming soon! Stay tuned 🔥
-      </Modal>
+  Royalty Ecosystem Academy — Coming Soon! 🔥  
+  Get ready to learn Web3, design, crypto skills, and earn while you grow.
+</Modal>
+
     </section>
   );
 };
