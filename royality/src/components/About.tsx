@@ -26,12 +26,12 @@ const About: FC = () => {
     >
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
 
-        {/* TEXT — LEFT ON DESKTOP, UNDER IMAGE ON MOBILE */}
+        {/* TEXT — LEFT ON DESKTOP */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="order-2 md:order-none"
+          className="order-1 md:order-none"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-orange-400">
             About Royalty Ecosystem
@@ -84,12 +84,12 @@ const About: FC = () => {
           </motion.div>
         </motion.div>
 
-        {/* IMAGE — RIGHT ON DESKTOP, ABOVE TEXT ON MOBILE */}
+        {/* IMAGE — RIGHT ON DESKTOP */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.9 }}
-          className="relative order-1 md:order-none"
+          className="relative order-2 md:order-none"
         >
           <div
             className="
