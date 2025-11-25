@@ -75,7 +75,7 @@ const About: FC = () => {
 
             <div className="bg-white/10 dark:bg-[#1a1a1a]/60 p-4 rounded-xl border border-orange-500/30 transition-colors">
               <h3 className="text-2xl font-bold text-orange-400">
-                {inView && <CountUp end={10000} />}+
+                {inView && <CountUp end={1000} />}+
               </h3>
               <p className="text-gray-700 dark:text-gray-300 text-sm transition-colors">
                 Community Members
