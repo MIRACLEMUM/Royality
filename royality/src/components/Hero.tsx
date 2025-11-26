@@ -1,11 +1,9 @@
 import { useState } from "react";
 import type { FC } from "react";
 import JoinPopup from "./JoinPopup";
-import Modal from "./Modal"; 
 
 const Hero: FC = () => {
   const [showJoin, setShowJoin] = useState(false);
-  const [showAnnouncement, setShowAnnouncement] = useState(false); // new state
 
   return (
     <section
@@ -34,6 +32,8 @@ const Hero: FC = () => {
 
         {/* CTA BUTTONS */}
         <div className="mt-8 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
+          
+          {/* JOIN COMMUNITY BUTTON */}
           <button
             className="bg-orange-500 dark:bg-orange-500 text-white dark:text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-orange-600 dark:hover:bg-orange-400 transition"
             onClick={() => setShowJoin(true)}
@@ -41,12 +41,16 @@ const Hero: FC = () => {
             Join community
           </button>
 
-          <button
-            className="border border-orange-400 dark:border-orange-400 text-black dark:text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-500 dark:hover:bg-orange-400 transition"
-            onClick={() => setShowAnnouncement(true)}
+          {/* DIRECT TELEGRAM BUTTON */}
+          <a
+            href="https://t.me/Royalties_POW"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-orange-400 dark:border-orange-400 text-black dark:text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-500 dark:hover:bg-orange-400 transition flex items-center justify-center"
           >
-            Announcement
-          </button>
+            Join Our Channel
+          </a>
+
         </div>
       </div>
 
@@ -57,13 +61,8 @@ const Hero: FC = () => {
         alt="Background Logo"
       />
 
-      {/* POPUPS */}
+      {/* JOIN POPUP */}
       <JoinPopup open={showJoin} onClose={() => setShowJoin(false)} />
-      <Modal open={showAnnouncement} onClose={() => setShowAnnouncement(false)} title="Announcement">
-  Royalty Ecosystem Academy , Coming Soon! 🔥  
-  Get ready to learn Web3, design, crypto skills, and earn while you grow.
-</Modal>
-
     </section>
   );
 };
