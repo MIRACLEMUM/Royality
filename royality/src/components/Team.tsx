@@ -12,20 +12,21 @@ interface TeamMember {
 }
 
 const teamMembers: TeamMember[] = [
-  { name: "King AB", role: "Founder/CEO", image: "/kingAB1.jpg", twitter: "https://t.me/King_MetaX", telegram: "#" },
+  { name: "King AB", role: "Founder/CEO", image: "/kingAB1.jpg", twitter: "https://t.me/King_MetaX", telegram:  "https://t.me/King_MetaX" },
   { name: "Primo", role: "Manager", image: "/Primo.jpg", twitter: "https://x.com/primo_Mind", telegram: "https://t.me/Primoeth" },
-  { name: "Queen Rose", role: "SMM", image: "/Rose.jpg", twitter: "https://x.com/Roseonchain", telegram: "#" },
+  { name: "Queen Rose", role: "SMM", image: "/Rose.jpg", twitter: "https://x.com/Roseonchain", telegram: "https://t.me/Roseonchain" },
   { name: "Emmy", role: "Manager", image: "/Emmy.jpg", twitter: "https://x.com/Emmy_1001", telegram: "https://t.me/Emmy0024" },
   { name: "Miracle Sunday", role: "Frontend Developer", image: "/miracles.jpg", twitter: "https://x.com/TechGoddess0", telegram: "https://t.me/miracle44444" },
-  { name: "Spydex", role: "Director", image: "/spid.jpg", twitter: "https://x.com/spydex_spy", telegram: "#" },
+  { name: "Spydex", role: "Director", image: "/spid.jpg", twitter: "https://x.com/spydex_spy", telegram: "https://t.me/spydex_sp" },
   { name: "Nnenna", role: "UI/UX Designer", image: "/Nne.jpg", twitter: "https://x.com/Nnennayaa_", telegram: "https://t.me/Nnennaya_E" },
   { name: "SMX", role: " Trader", image: "/smx.jpg", twitter: "https://x.com/Sleem_mx", telegram: "#" },
-  { name: "Wajudjim", role: "Moderator", image: "/wajudjim.jpg", twitter: "https://x.com/wajudjim", telegram: "#" },
+  { name: "Wajudjim", role: "Moderator", image: "/wajudjim.jpg", twitter: "https://x.com/wajudjim", telegram:  "https://t.me//wajud_jim" },
   { name: "Mee", role: "Designer", image: "/mee.jpg", twitter: "https://x.com/Jesu_tofunmee", telegram: "#" },
-  { name: "Goodness", role: " Manager ", image: "/goodness.jpg", twitter: "https://x.com/younggee704?s=20", telegram: "#" },
-  { name: "Don", role: "Designer", image: "/Don.jpg", twitter: "https://x.com/_Don001", telegram: "#" },
-  { name: "Carcal", role: "Manager", image: "/Carcal.jpg", twitter: "https://x.com/carcalofweb3", telegram: "#" },
-  { name: "Razzy", role: "Director", image: "/razzy.jpg", twitter: "https://x.com/Razzyox", telegram: "#" },
+  { name: "Goodness", role: " Manager ", image: "/goodness.jpg", twitter: "https://x.com/younggee704?s=20", telegram: "https://t.me/younggee704" },
+  { name: "Don", role: "Designer", image: "/Don.jpg", twitter: "https://x.com/_Don001", telegram: "https://t.me/DonNFA" },
+  { name: "Carcal", role: "Manager", image: "/Carcal.jpg", twitter: "https://x.com/carcalofweb3", telegram:
+     "https://t.me/CARCALOFWEB3" },
+  { name: "Razzy", role: "Director", image: "/razzy.jpg", twitter: "https://x.com/Razzyox", telegram: "https://t.me/RAZZY_OX" },
   { name: "Alhagee", role: "Visual strategies", image: "/alhagee.jpg", twitter: "https://x.com/alhagee45", telegram: "#" },
 ];
 
